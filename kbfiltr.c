@@ -805,6 +805,8 @@ Return Value:
 
     devExt = FilterGetData(hDevice);
 
+    DebugPrint(("kbfilter v1: %x\n", InputDataStart->MakeCode));
+
     (*(PSERVICE_CALLBACK_ROUTINE)(ULONG_PTR) devExt->UpperConnectData.ClassService)(
         devExt->UpperConnectData.ClassDeviceObject,
         InputDataStart,
