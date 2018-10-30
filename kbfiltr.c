@@ -77,7 +77,6 @@ Return Value:
     NTSTATUS                        status;
 
     DebugPrint(("Keyboard Filter Driver Sample - Driver Framework Edition.\n"));
-    DebugPrint(("Built %s %s\n", __DATE__, __TIME__));
 
     //
     // Initiialize driver config to control the attributes that

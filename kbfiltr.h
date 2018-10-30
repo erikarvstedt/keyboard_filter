@@ -40,18 +40,18 @@ Environment:
 
 #define KBFILTER_POOL_TAG (ULONG) 'tlfK'
 
+#define EnableDebugOutput
+
+#ifdef EnableDebugOutput
+  #define DebugPrint(_x_) DbgPrint _x_
+#else
+  #define DebugPrint(_x_)
+#endif
+
 #if DBG
-
-#define TRAP()                      DbgBreakPoint()
-
-#define DebugPrint(_x_) DbgPrint _x_
-
-#else   // DBG
-
-#define TRAP()
-
-#define DebugPrint(_x_)
-
+  #define TRAP() DbgBreakPoint()
+#else
+  #define TRAP()
 #endif
 
 #define MIN(_A_,_B_) (((_A_) < (_B_)) ? (_A_) : (_B_))
